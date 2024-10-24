@@ -1,94 +1,47 @@
-#include <iostream>
-#include <string>
-using namespace std;
+TOPICS and LINKS:
 
-int main() {
-    char board[3][3] = {
-        {' ', ' ', ' '}, 
-        {' ', ' ', ' '}, 
-        {' ', ' ', ' '}
-    };
-
-    const char playerX = 'X';
-    const char playerO = 'O';
-    char currentPlayer = playerX;
-    int r = -1;
-    int c = -1;
-    char winner = ' ';
-
-    for (int i = 0; i < 9; i++) {
-        //print game board
-        cout << "   |   |   " << endl;
-        cout << " " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;
-        cout << "___|___|___" << endl;
-        cout << "   |   |   " << endl;
-        cout << " " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;
-        cout << "___|___|___" << endl;
-        cout << "   |   |   " << endl;
-        cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
-        cout << "   |   |   " << endl;
-
-        if (winner != ' ') {
-            break;
-        }
-
-        //get player input
-        cout << "Current Player is " << currentPlayer << endl;
-        while (true) {
-            cout << "Enter r c from 0-2 for row and column: ";
-            cin >> r >> c;
-            if (r < 0 || r > 2 || c < 0 || c > 2) {
-                cout << "Invalid input, try again." << endl;
-            }
-            else if (board[r][c] != ' ') {
-                cout << "Tile is full, try again." << endl;
-            }
-            else {
-                break;
-            }
-            //reset values
-            r = -1;
-            c = -1;
-            cin.clear(); //clear error flags
-            cin.ignore(10000, '\n'); //discard values 
-            //(skips to the next new line \n up to 10000 char) already in input stream
-
-        }
-
-        board[r][c] = currentPlayer;
-        currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
-
-        //check winners
-
-        //rows - horizontal
-        for (int r = 0; r < 3; r++) {
-            if (board[r][0] != ' ' && board[r][0] == board[r][1] && board[r][1] == board[r][2]) {
-                winner = board[r][0];
-                break;
-            }
-        }
-
-        //columns - vertical
-        for (int c = 0; c < 3; c++) {
-            if (board[0][c] != ' ' && board[0][c] == board[1][c] && board[1][c] == board[2][c]) {
-                winner = board[0][c];
-                break;
-            }
-        }
-
-        //diagonal
-        if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            winner = board[0][0];
-        }
-        else if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-            winner = board[0][2];
-        }
-    }
-
-    if (winner != ' ') {
-        cout << "Player" << winner << " is the winner!" << endl;
-    }
-    else {
-        cout << "Tie!" << endl;
-    }
-}
+Main Function #include iostream using namespace std; int main {} cout<<endl; return 0;
+Variables & Data Types int float double bool char string
+How to check Variable Types
+Implicit Type Conversions
+Multiple Variables Declaration in single line
+Math/Arithmetic Operations + - * / %
+Type Casting/Explicit Type Conversions
+Increment and Decrement ++ --
+If/Else Logic Operators if else if, and &&, or ||, not !
+If/Else Comparison Operators if else if, < <= > >= == !=
+Ternary Operators (X) ? A : B 
+Getting user Input cin>> getline()
+Practice Problems
+Arrays int arr[5] = {5, 10, 15, 20, 25}
+Strings & Cstrings "ABC" {'a', 'b', 'c'}
+Vectors & Dynamic Arrays vector<int> v = {1, 2, 3}
+For Loops for (int i = 0; i < 5; i++ ){ ... }
+For Each Loops/Ranged Based For Loops for (int x : arr) {...}
+While Loops while (true) {...}
+Do While Loops do {...} while (true)
+Break & Continue break; continue;
+Switch Case Statements switch(a) { case 1: ... }
+Rock Paper Scissors
+Multidimensional/2D Arrays int mat[2][2] = {{1, 0}, {0, 1}}
+Tic Tac Toe
+Pointers int* ptr = &address
+Const Pointers/Pointers to Const int* const ptr, const int* ptr
+References int& ref = object
+Null Pointers nullptr
+Array Pointers int* ptr = {1, 2, 3}
+Dynamic Memory Allocation new delete
+Dynamically Allocated Arrays int* arr = new int[10]
+Pointer to Pointers int** ptrB = &ptrA
+Functions
+Function Pass by Value, Reference, Const Reference
+Function Overloading/Polymorphic Functions
+Generics and Templates template <typename T>
+Practice Problems Functions
+Recursion
+Recursion with Vectors
+Global and Local Variable Scope
+Enumerations enum
+Exceptions and Error Handling try throw catch
+Iterators
+CppTutorials/README.md at master · ImKennyYip/CppTutorials · GitHub 
